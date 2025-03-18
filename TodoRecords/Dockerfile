@@ -18,4 +18,4 @@ COPY --from=build /app/out ./
 EXPOSE 80
 
 
-ENTRYPOINT [dotnet, TodoRecords.dll]
+ENTRYPOINT ["dotnet", "TodoRecords.dll"]
