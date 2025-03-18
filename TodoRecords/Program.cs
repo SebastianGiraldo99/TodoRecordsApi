@@ -21,6 +21,7 @@ builder.Services.AddCors( options =>
     {
         policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
         policy.WithOrigins("http://localhost:4100").AllowAnyMethod().AllowAnyHeader();
+        policy.WithOrigins("https://sebastiangiraldo99.github.io/").AllowAnyMethod().AllowAnyHeader();
 
     });
 });
@@ -35,11 +36,13 @@ var app = builder.Build();
 
 app.UseCors("AllowFrontend");
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
