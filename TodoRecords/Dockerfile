@@ -18,4 +18,4 @@ COPY --from=build appout .
 EXPOSE 80
 
 
-ENTRYPOINT [dotnet, TuProyecto.dll]
+ENTRYPOINT [dotnet, TodoRecords.dll]
